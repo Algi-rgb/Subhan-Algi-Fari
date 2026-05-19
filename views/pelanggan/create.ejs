@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+<h3>Tambah Pelanggan</h3>
+
+<% if (error) { %>
+<div class="alert alert-danger"><%= error %></div>
+<% } %>
+
+<form method="POST" action="/pelanggan/store">
+<input name="nama" class="form-control mb-2" placeholder="Nama">
+<input name="no_hp" class="form-control mb-2" placeholder="No HP">
+<textarea name="alamat" class="form-control mb-2" placeholder="Alamat"></textarea>
+
+<button class="btn btn-primary">Simpan</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>

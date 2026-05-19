@@ -1,0 +1,72 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+
+<h3>Edit Pesanan</h3>
+
+<form method="POST" action="/pesanan/update/<%= data.id %>">
+
+<div class="mb-3">
+<label>Pelanggan</label>
+
+<select name="pelanggan_id" class="form-control">
+
+<% pelanggan.forEach(p => { %>
+
+<option
+value="<%= p.id %>"
+<%= p.id == data.id_pelanggan ? 'selected' : '' %>
+>
+
+<%= p.nama %>
+
+</option>
+
+<% }) %>
+
+</select>
+</div>
+
+<div class="mb-3">
+<label>Tanggal Pesanan</label>
+
+<input
+type="date"
+name="tanggal_pesanan"
+value="<%= data.tanggal_pesanan %>"
+class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Total Harga</label>
+
+<input
+type="number"
+name="total_harga"
+value="<%= data.total_harga %>"
+class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Status Pesanan</label>
+
+<input
+type="text"
+name="status_pesanan"
+value="<%= data.status_pesanan %>"
+class="form-control">
+</div>
+
+<button class="btn btn-primary">
+Update
+</button>
+
+<a href="/pesanan" class="btn btn-secondary">
+Kembali
+</a>
+
+</form>
+
+</div>
+
+<%- include('../partials/footer') %>

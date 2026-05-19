@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+<h3>Tambah Stok</h3>
+
+<% if (error) { %>
+<div class="alert alert-danger"><%= error %></div>
+<% } %>
+
+<form method="POST" action="/stok/store">
+<input name="nama_barang" class="form-control mb-2" placeholder="Nama Barang">
+<input name="jumlah" class="form-control mb-2" placeholder="Jumlah">
+<input name="satuan" class="form-control mb-2" placeholder="Satuan">
+
+<button class="btn btn-primary">Simpan</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>

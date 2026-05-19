@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+<h3>Pelanggan</h3>
+
+<a href="/pelanggan/create" class="btn btn-success mb-3">Tambah</a>
+
+<table class="table table-bordered">
+<tr>
+<th>Nama</th>
+<th>No HP</th>
+<th>Alamat</th>
+<th>Aksi</th>
+</tr>
+
+<% pelanggan.forEach(p => { %>
+<tr>
+<td><%= p.nama %></td>
+<td><%= p.no_hp %></td>
+<td><%= p.alamat %></td>
+<td>
+<a href="/pelanggan/edit/<%= p.id %>" class="btn btn-warning btn-sm">Edit</a>
+<a href="/pelanggan/delete/<%= p.id %>" class="btn btn-danger btn-sm">Hapus</a>
+</td>
+</tr>
+<% }) %>
+
+</table>
+</div>
+
+<%- include('../partials/footer') %>

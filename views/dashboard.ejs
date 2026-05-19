@@ -1,0 +1,100 @@
+<%- include('partials/header') %>
+
+<div class="row g-4">
+
+    <div class="col-md-3">
+        <div class="card-dashboard bg-blue">
+
+            <h5>Total Pelanggan</h5>
+
+            <h1><%= stats.pelanggan %></h1>
+
+            <i class="bi bi-people fs-1"></i>
+
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-dashboard bg-green">
+
+            <h5>Total Stok</h5>
+
+            <h1><%= stats.stok %></h1>
+
+            <i class="bi bi-box-seam fs-1"></i>
+
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-dashboard bg-orange">
+
+            <h5>Total Pesanan</h5>
+
+            <h1><%= stats.pesanan %></h1>
+
+            <i class="bi bi-cart fs-1"></i>
+
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card-dashboard bg-red">
+
+            <h5>Total Invoice</h5>
+
+            <h1><%= stats.invoice %></h1>
+
+            <i class="bi bi-receipt fs-1"></i>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- WELCOME -->
+<div class="card mt-4 border-0 shadow-sm">
+
+    <div class="card-body">
+
+        <h3>Selamat Datang di Central Print Karawang</h3>
+
+        <p>
+            Sistem informasi percetakan untuk mengelola pelanggan,
+            stok barang, pesanan, dan invoice secara efektif.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- MENU CEPAT -->
+<div class="row mt-4">
+
+    <div class="col-md-3">
+        <a href="/pelanggan" class="btn btn-primary w-100 p-3">
+            Kelola Pelanggan
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/stok" class="btn btn-success w-100 p-3">
+            Kelola Stok
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/pesanan" class="btn btn-warning w-100 p-3">
+            Kelola Pesanan
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="/invoice" class="btn btn-danger w-100 p-3">
+            Kelola Invoice
+        </a>
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>

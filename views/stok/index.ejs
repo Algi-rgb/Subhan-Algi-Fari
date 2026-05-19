@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+<h3>Stok Barang</h3>
+
+<a href="/stok/create" class="btn btn-success mb-3">Tambah</a>
+
+<table class="table table-bordered">
+<tr>
+<th>Nama Barang</th>
+<th>Jumlah</th>
+<th>Satuan</th>
+<th>Aksi</th>
+</tr>
+
+<% stok.forEach(s => { %>
+<tr>
+<td><%= s.nama_barang %></td>
+<td><%= s.jumlah %></td>
+<td><%= s.satuan %></td>
+<td>
+<a href="/stok/edit/<%= s.id %>" class="btn btn-warning btn-sm">Edit</a>
+<a href="/stok/delete/<%= s.id %>" class="btn btn-danger btn-sm">Hapus</a>
+</td>
+</tr>
+<% }) %>
+
+</table>
+</div>
+
+<%- include('../partials/footer') %>

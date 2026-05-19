@@ -1,0 +1,64 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+
+<h3>Data Pesanan</h3>
+
+<a href="/pesanan/create" class="btn btn-success mb-3">
+Tambah Pesanan
+</a>
+
+<table class="table table-bordered">
+
+<thead>
+<tr>
+<th>No</th>
+<th>Pelanggan</th>
+<th>Tanggal</th>
+<th>Total Harga</th>
+<th>Status</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody>
+
+<% pesanan.forEach((p, index) => { %>
+
+<tr>
+
+<td><%= index + 1 %></td>
+
+<td><%= p.nama %></td>
+
+<td><%= p.tanggal_pesanan %></td>
+
+<td>Rp <%= p.total_harga %></td>
+
+<td><%= p.status_pesanan %></td>
+
+<td>
+
+<a href="/pesanan/edit/<%= p.id %>"
+class="btn btn-warning btn-sm">
+Edit
+</a>
+
+<a href="/pesanan/delete/<%= p.id %>"
+class="btn btn-danger btn-sm">
+Hapus
+</a>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+<%- include('../partials/footer') %>

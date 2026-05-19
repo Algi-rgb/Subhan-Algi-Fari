@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+<h3>Tambah Invoice</h3>
+
+<form method="POST" action="/invoice/store">
+
+<label>Pilih Pesanan</label>
+<select name="id_pesanan" class="form-control mb-2">
+<% pesanan.forEach(p => { %>
+<option value="<%= p.id %>">
+<%= p.nama %> (Pesanan ID: <%= p.id %>)
+</option>
+<% }) %>
+</select>
+
+<input name="total" class="form-control mb-2" placeholder="Total">
+<input name="metode_pembayaran" class="form-control mb-2" placeholder="Metode Pembayaran">
+<input name="status_pembayaran" class="form-control mb-2" placeholder="Status Pembayaran">
+<input type="date" name="tanggal" class="form-control mb-2">
+
+<button class="btn btn-primary">Simpan</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>

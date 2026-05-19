@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-4">
+<h3>Edit Stok</h3>
+
+<% if (error) { %>
+<div class="alert alert-danger"><%= error %></div>
+<% } %>
+
+<form method="POST" action="/stok/update/<%= data.id %>">
+<input name="nama_barang" value="<%= data.nama_barang %>" class="form-control mb-2">
+<input name="jumlah" value="<%= data.jumlah %>" class="form-control mb-2">
+<input name="satuan" value="<%= data.satuan %>" class="form-control mb-2">
+
+<button class="btn btn-primary">Update</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>
